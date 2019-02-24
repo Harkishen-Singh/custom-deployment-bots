@@ -1,9 +1,0 @@
-repository_name: Enryption-Web-App-Flask
-repository_owner: Harkishen-Singh
-# https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
-# github_token: "305767b263b7284fa9868950a7f4292698d9b884"
-github_token: "c98f6d3e72b503ccf97fc13230a3c412bf13cf93"
-#github_token: 44a21a67cb3cfbac11f1a4825f1e7bedb18f778d
-# time in seconds during checks for new releases
-refresh_interval: 50
-github_username: user-bot-harkishen-release

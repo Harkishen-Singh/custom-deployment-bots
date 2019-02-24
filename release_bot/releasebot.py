@@ -23,13 +23,13 @@ import time
 from semantic_version import Version, validate
 from sys import exit
 
-from release_bot.cli import CLI
-from release_bot.configuration import configuration
-from release_bot.exceptions import ReleaseException
-from release_bot.fedora import Fedora
-from release_bot.git import Git
-from release_bot.github import Github
-from release_bot.pypi import PyPi
+from cli import CLI
+from configuration import configuration
+from exceptions import ReleaseException
+from fedora import Fedora
+from git import Git
+from github import Github
+from pypi import PyPi
 
 
 class ReleaseBot:
@@ -127,6 +127,9 @@ class ReleaseBot:
                 match = re.match(r'(.+) release', edge['node']['title'].lower())
                 if match and validate(match[1]):
                     merge_commit = edge['node']['mergeCommit']
+                    print('thisssssssssss')
+                    self.logger.warn(f"merge_commit")
+                    logging.info(merge_commit)
                     self.logger.info(f"Found merged release PR with version {match[1]}, "
                                      f"commit id: {merge_commit['oid']}")
                     new_release = {'version': match[1],
@@ -198,6 +201,7 @@ class ReleaseBot:
             raise ReleaseException(f"Failed getting latest Github release (zip).\n{exc}")
 
         if Version.coerce(latest_release) >= Version.coerce(self.new_release['version']):
+            self.logger.info(f"{self.new_release['version']} yoooooooooooooooooo")
             self.logger.info(
                 f"{self.new_release['version']} has already been released on Github")
         else:
@@ -264,7 +268,8 @@ class ReleaseBot:
             raise
 
     def run(self):
-        self.logger.info(f"release-bot v{configuration.version} reporting for duty!")
+        # self.logger.info(f"release-bot v{configuration.version} reporting for duty!")
+        self.logger.info(f"release-bot v{configuration.version} duty!")
         try:
             while True:
                 self.git.pull()
@@ -303,4 +308,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print('running main')
     exit(main())

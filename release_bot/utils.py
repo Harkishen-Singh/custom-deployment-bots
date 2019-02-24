@@ -22,8 +22,8 @@ import subprocess
 import locale
 from semantic_version import validate
 
-from release_bot.configuration import configuration
-from release_bot.exceptions import ReleaseException
+from configuration import configuration
+from exceptions import ReleaseException
 
 
 logger = logging.getLogger('release-bot')

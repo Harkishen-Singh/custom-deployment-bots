@@ -17,8 +17,8 @@ import os
 import time
 import re
 
-from release_bot.exceptions import ReleaseException, GitException
-from release_bot.utils import insert_in_changelog, parse_changelog, look_for_version_files
+from exceptions import ReleaseException, GitException
+from utils import insert_in_changelog, parse_changelog, look_for_version_files
 
 import jwt
 import requests

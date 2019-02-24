@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 import sys
 
-from release_bot.version import __version__
+from version import __version__
 
 
 class Configuration:

@@ -17,8 +17,8 @@ from glob import glob
 import os
 import requests
 
-from release_bot.exceptions import ReleaseException
-from release_bot.utils import run_command
+from exceptions import ReleaseException
+from utils import run_command
 
 
 class PyPi:

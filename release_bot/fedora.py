@@ -17,8 +17,8 @@ from glob import glob
 import os
 from tempfile import TemporaryDirectory
 
-from release_bot.utils import run_command, update_spec
-from release_bot.exceptions import ReleaseException
+from utils import run_command, update_spec
+from exceptions import ReleaseException
 
 
 class Fedora:

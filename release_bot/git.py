@@ -20,8 +20,8 @@ import shutil
 from tempfile import TemporaryDirectory, mkdtemp
 from os import path
 
-from release_bot.utils import run_command, run_command_get_output
-from release_bot.exceptions import GitException
+from utils import run_command, run_command_get_output
+from exceptions import GitException
 
 
 class Git:
@@ -42,6 +42,7 @@ class Git:
         :return: TemporaryDirectory object
         """
         temp_directory = mkdtemp()
+        print('temp directory is ' + temp_directory)
         if not run_command(temp_directory, f'git clone {url} .',
                            "Couldn't clone repository!", fail=True):
             raise GitException(f"Can't clone repository {url}")
